@@ -249,10 +249,9 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
-  // return Number(value) === Number.isNaN ? def : Number(value);
-  // return typeof Number(value) === 'number' ? Number(value) : def;
+function toNumber(value, def) {
+  // throw new Error('Not implemented');
+  return Number(value) || def;
 }
 
 /**
@@ -663,8 +662,9 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  // throw new Error('Not implemented');
+  return Math.hypot(a, b);
 }
 
 /**
@@ -680,8 +680,13 @@ function getHypotenuse(/* a, b */) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  // throw new Error('Not implemented');
+  let summ = 0;
+  for (let i = 1; i <= Math.abs(number); i += 2) {
+    summ += 1;
+  }
+  return summ;
 }
 
 module.exports = {
